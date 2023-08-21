@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 10:20:29 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/19 09:18:17 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:41:01 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,17 @@ class ClapTrap {
 		void			attack(const std::string& target);
 		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
-		void			takeOffEnergy(void);
-		bool			checkHPEnergy(void) const;
-		// Getters
+		// Setters && Getters
 		std::string		getName(void) const;
 		unsigned int	getHP(void) const;
 		unsigned int	getAttackDamge(void) const;
 		unsigned int	getEnergyPoints(void) const;
+		void			setHP(unsigned int value);
+		void			setAttackDamge(unsigned int value);
+		void			setEnergyPoints(unsigned int value);
+		// Tools
+		void			takeOffEnergy(void);
+		bool			checkHPEnergy(void) const;
 };
 
 #endif /* _CLAPTRAP_HPP_ */

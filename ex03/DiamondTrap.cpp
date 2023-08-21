@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 09:06:42 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/20 15:57:49 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:39:55 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ DiamondTrap::DiamondTrap(void) : ClapTrap()
 	std::cout << "DiamondTrap: Default constructor called\n";
 }
 
-DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name), name(Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name"), name(Name)
 {
+	setHP(100);
+	setEnergyPoints(50);
+	setAttackDamge(30);
 	std::cout << "DiamondTrap: Param constructor called\n";
 }
 

@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 09:17:20 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/19 16:11:47 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:21:37 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
 {
+	setHP(100);
+	setEnergyPoints(50);
+	setAttackDamge(20);
 	std::cout << "ScavTrap: Param constructor called\n";
 }
 
@@ -37,6 +40,16 @@ ScavTrap	&ScavTrap::operator = (const ScavTrap &source)
 	if (this != &source)
 		ClapTrap::operator=(source);
 	return (*this);
+}
+
+void	ScavTrap::attack(const std::string &target)
+{
+	if (checkHPEnergy())
+	{
+		std::cout << "ScavTrap " << getName() << " attacks " << target \
+			<< ", causing " << getAttackDamge() << " points of damage!\n";
+		takeOffEnergy();
+	}
 }
 
 void	ScavTrap::guardGate(void)

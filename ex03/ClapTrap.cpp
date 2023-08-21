@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 10:23:19 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/20 15:31:02 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:39:22 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap(void) : hitPoint(0), energyPoints(0), attackDamage(0)
 	std::cout << "ClapTrap: Default constructor called\n";
 }
 
-ClapTrap::ClapTrap(std::string Name) : name(Name + "_clap_name"), hitPoint(100), energyPoints(50), attackDamage(30)
+ClapTrap::ClapTrap(std::string Name) : name(Name), hitPoint(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "ClapTrap: Param constructor called\n";
 }
@@ -99,6 +99,21 @@ unsigned int	ClapTrap::getAttackDamge(void) const
 unsigned int	ClapTrap::getEnergyPoints(void) const
 {
 	return (energyPoints);
+}
+
+void	ClapTrap::setHP(unsigned int value)
+{
+	hitPoint = value;
+}
+
+void	ClapTrap::setAttackDamge(unsigned int value)
+{
+	attackDamage = value;
+}
+
+void	ClapTrap::setEnergyPoints(unsigned int value)
+{
+	energyPoints = value;
 }
 
 // Tools

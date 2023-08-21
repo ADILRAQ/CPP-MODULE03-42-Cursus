@@ -6,7 +6,7 @@
 /*   By: araqioui <araqioui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 15:45:13 by araqioui          #+#    #+#             */
-/*   Updated: 2023/08/19 15:54:10 by araqioui         ###   ########.fr       */
+/*   Updated: 2023/08/21 13:52:24 by araqioui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string Name) : ClapTrap(Name)
 {
+	setHP(100);
+	setEnergyPoints(100);
+	setAttackDamge(30);
 	std::cout << "FragTrap: Param constructor called\n";
 }
 
